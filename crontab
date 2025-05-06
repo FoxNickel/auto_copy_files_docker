@@ -1,0 +1,1 @@
+0 3 * * * root /usr/local/bin/python /app/copy_dirs.py /source /destination

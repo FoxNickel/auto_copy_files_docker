@@ -1,0 +1,1 @@
+$CRON_SCHEDULE root /usr/local/bin/python /app/copy_dirs.py "$SOURCE_DIR" "$DEST_DIR"

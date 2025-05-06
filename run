@@ -1,0 +1,36 @@
+  docker run -d \
+    --name daily-copy-container \
+    -v /home/NickelFox/Photos:/source \
+    -v /volume2/Photos:/destination \
+    -v /volume1/docker/daily_copy:/app/logs \
+    daily-copy
+
+
+docker run -d \
+    --name cron-test-container \
+    -v /home/NickelFox/Photos:/source \
+    -v /volume2/Photos:/destination \
+    -v /volume1/docker/cron_test:/app/logs \
+    cron-test
+
+
+docker run -d \
+  --name daily-copy-photos-dynamically-test \
+  -e CRON_SCHEDULE="* * * * *" \
+  -e SOURCE_DIR="/source" \
+  -e DEST_DIR="/dest" \
+  -v /home/NickelFox/Photos:/source \
+  -v /volume2/Photos:/dest \
+  -v /volume1/docker/cron_test:/app/logs \
+  dynamic-copy
+
+
+docker run -d \
+  --name daily-copy-photos-dynamically \
+  -e CRON_SCHEDULE="0 3 * * *" \
+  -e SOURCE_DIR="/source" \
+  -e DEST_DIR="/dest" \
+  -v /home/NickelFox/Photos:/source \
+  -v /volume2/Photos:/dest \
+  -v /volume1/docker/daily_copy_photos:/app/logs \
+  dynamic-copy
