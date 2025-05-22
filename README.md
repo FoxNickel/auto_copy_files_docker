@@ -16,3 +16,4 @@
     -v /volume1/docker/daily_copy_photos:/app/logs \
     dynamic-copy
 - 查看cron任务: cat /etc/cron.d/copy-job
+- 绿联编辑的时候一定要给权限, 所有权限都给, 不然就会不执行
